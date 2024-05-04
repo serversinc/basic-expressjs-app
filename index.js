@@ -4,8 +4,10 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 const app = new express();
+
+const users = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
 
 app.use(cors());
 
@@ -19,10 +21,19 @@ app.get("/v1/message", (request, response) => {
 
 app.get("/v1/users", (_, response) => {
   return response.json({
-    users: ["Homer", "Marge", "Bart", "Lisa", "Maggy"],
+    users,
+  });
+});
+
+app.get("/v1/users/:name", (request, response) => {
+  const { name } = request.params;
+  const user = users.find(user => user.toLowerCase() === name);
+
+  return response.json({
+    user,
   });
 });
 
 app.listen(port, () => {
-console.log(`Express app listening on port ${port}`);
+  console.log(`Express app listening on port ${port}`);
 });
