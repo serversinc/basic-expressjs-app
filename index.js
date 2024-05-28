@@ -12,7 +12,7 @@ const users = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
 app.use(cors());
 
 app.get("/v1/message", (request, response) => {
-  const { message } = request.query;
+  const message = process.env.MESSAGE || "Hello, World!";
 
   return response.json({
     message,

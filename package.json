@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "pack": "pack build basic-express-app --builder heroku/builder:22 --buildpack heroku/nodejs",
+    "docker:push": "docker tag basic-express-app:latest quantum.serversinc.io/library/basic-express-app:latest && docker push quantum.serversinc.io/library/basic-express-app:latest"
   },
   "author": "",
   "license": "ISC",
