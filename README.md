@@ -1,19 +1,14 @@
-
 # basic-express
 
 A basic express app with two endpoints.
 
 ## API Reference
 
-#### Get Message from Query String
+#### Get Message from ENV variables
 
 ```http
   GET /v1/message
 ```
-
-| Query String | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `message` | `string` | (required) a message to have sent back to you |
 
 #### Get list of users
 
@@ -25,8 +20,8 @@ A basic express app with two endpoints.
 
 To run this project, you will need to add the following environment variables to your .env file
 
-| Name | Type     | Description                |
-| :-------- | :------- | :------------------------- |
+| Name   | Type     | Description                                   |
+| :----- | :------- | :-------------------------------------------- |
 | `PORT` | `number` | (required) The port to run the express app on |
 
 ## Run Locally
