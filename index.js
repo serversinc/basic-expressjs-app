@@ -7,7 +7,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 const app = new express();
 
-const users = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
+const users = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Ned", "Maude", "Rod", "Todd"];
 
 app.use(cors());
 
