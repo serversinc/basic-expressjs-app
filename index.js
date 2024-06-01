@@ -11,6 +11,12 @@ const users = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "Ned", "Maude", "Rod"
 
 app.use(cors());
 
+app.use((request, response, next) => {
+  let datetime = new Date().toLocaleString();
+  console.log(`[${datetime}] ${request.method} ${request.originalUrl}`);
+  next();
+});
+
 app.get("/v1/message", (request, response) => {
   const message = process.env.MESSAGE || "Hello, World!";
 
